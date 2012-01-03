@@ -97,8 +97,8 @@ module Magento
         options.each_pair { |k, v| filters[k] = {:eq => v} }
         results = list(filters)
         
-        raise Magento::ApiError, "100 -> Requested order not exists." if results.blank?
         
+        raise Magento::ApiError, "100 -> Requested order not exists." if results.none?
         if find_type == :first
           info(results.first.increment_id)
         else
