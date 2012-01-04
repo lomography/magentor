@@ -48,7 +48,7 @@ Gem::Specification.new do |s|
      "magentor.gemspec"
   ]
 
-  s.add_dependency('activesupport', '3.0.0')
+  s.add_dependency('activesupport')
   s.homepage = %q{http://github.com/pstuteville/magentor}
   s.rdoc_options = ["--main", "README.rdoc", "--inline-source", "--line-numbers"]
   s.require_paths = ["lib"]
