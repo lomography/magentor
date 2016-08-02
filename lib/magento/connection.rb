@@ -9,7 +9,7 @@ module Magento
     end
 
     def client
-      @client ||= XMLRPC::Client.new(config[:host], config[:path], config[:port], use_ssl: (config[:port].to_i == 443))
+      @client ||= XMLRPC::Client.new3(host: config[:host], path: config[:path], port: config[:port], use_ssl: config[:port].to_i == 443)
     end
 
     def connect
