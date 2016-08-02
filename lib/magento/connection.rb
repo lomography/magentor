@@ -1,5 +1,5 @@
 module Magento
-  class Connection 
+  class Connection
     attr_accessor :session, :config, :logger
 
     def initialize(config = {})
@@ -9,7 +9,7 @@ module Magento
     end
 
     def client
-      @client ||= XMLRPC::Client.new(config[:host], config[:path], config[:port])
+      @client ||= XMLRPC::Client.new(config[:host], config[:path], config[:port], use_ssl: (config[:port].to_i == 443))
     end
 
     def connect
